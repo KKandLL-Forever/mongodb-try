@@ -11,8 +11,8 @@ async function run() {
     let res = await client
       .db("test")
       .collection('inventory')
-      .findOne({item:"journal"})
-    console.log(res)
+      .find({item:"journal"})
+    console.log(await res.toArray())
   } catch (err) {
     console.log('Connect failed')
   } finally {
